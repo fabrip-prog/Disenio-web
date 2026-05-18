@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PuntoTech | Componentes y Accesorios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <div class="page-overlay"></div>
+    <header class="hero">
+      <div class="hero-brand">
+        <div class="brand-logo">
+          <span class="logo-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+              <path d="M32 2C21.1 2 12 11.1 12 22c0 10.2 12.7 28.1 18.9 36.3.6.8 1.5 1.2 2.4 1.2s1.8-.5 2.4-1.2C39.3 50.1 52 32.2 52 22 52 11.1 42.9 2 32 2Z" fill="#E63946"/>
+              <circle cx="32" cy="22" r="7" fill="#fff"/>
+            </svg>
+          </span>
+          PuntoTech
+        </div>
+        <p class="hero-subtitle">El punto exacto donde encontrarás lo que buscas.</p>
+      </div>
+      <div class="hero-search">
+        <label for="search" class="search-label">¿Qué estás buscando...?</label>
+        <div class="search-field">
+          <input id="search" type="search" placeholder="Busca RAM, CPU, cargadores, auriculares..." />
+          <button type="button">Buscar</button>
+        </div>
+      </div>
+      <div class="section-selector" role="tablist" aria-label="Secciones PuntoTech">
+        <button type="button" class="section-tab active" data-target="catalogo">Catálogo</button>
+        <button type="button" class="section-tab" data-target="novedades">Novedades</button>
+        <button type="button" class="section-tab" data-target="productos">Componentes</button>
+        <button type="button" class="section-tab" data-target="accesorios">Accesorios</button>
+        <button type="button" class="section-tab" data-target="contacto">Contacto</button>
+      </div>
+      <div class="search-results" id="search-results" aria-live="polite">
+        <p class="search-message">Escribe un término y presiona Buscar para ver productos disponibles.</p>
+      </div>
+    </header>
+
+    <section class="section catalog-overview" data-section="catalogo">
+      <h2>Catálogo general</h2>
+      <div class="catalog-filter-buttons" role="group" aria-label="Filtrar catálogo general">
+        <button type="button" class="filter-button active" data-filter="Todos">Todos</button>
+        <button type="button" class="filter-button" data-filter="Componentes">Componentes</button>
+        <button type="button" class="filter-button" data-filter="Accesorios">Accesorios</button>
+      </div>
+      <div class="catalog-carousel">
+        <button type="button" class="carousel-arrow prev" aria-label="Anterior catálogo">‹</button>
+        <div class="product-grid carousel" id="catalog-grid"></div>
+        <button type="button" class="carousel-arrow next" aria-label="Siguiente catálogo">›</button>
+      </div>
+    </section>
+
+    <section class="section novedades" data-section="novedades">
+      <h2>Novedades</h2>
+      <div class="cards-grid">
+        <article class="card" role="button" data-filter="RAM">
+          <span class="card-icon">🔥</span>
+          <h3>Ofertas en RAM</h3>
+          <p>Hasta 25% de descuento en módulos DDR4 y DDR5 con envío rápido.</p>
+        </article>
+        <article class="card" role="button" data-filter="CPU">
+          <span class="card-icon">💎</span>
+          <h3>Promos en CPU</h3>
+          <p>Descuentos por compra de procesador + placa base.</p>
+        </article>
+        <article class="card" role="button" data-filter="GPU">
+          <span class="card-icon">⚡</span>
+          <h3>Lanzamientos</h3>
+          <p>Lo último en tarjetas gráficas y refrigeración líquida.</p>
+        </article>
+      </div>
+      <div class="catalog-grid">
+        <article class="catalog-item" data-cat="RAM">
+          <h4>Oferta en Memoria</h4>
+          <p>Kit DDR4 16GB con precio especial y envío gratuito.</p>
+        </article>
+        <article class="catalog-item" data-cat="CPU">
+          <h4>Combo CPU + Motherboard</h4>
+          <p>Ahorra al comprar procesador con placa base compatible.</p>
+        </article>
+        <article class="catalog-item" data-cat="GPU">
+          <h4>Bundle GPU y Refrigeración</h4>
+          <p>Sistema completo para gaming con potencia y estabilidad.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section productos" data-section="productos">
+      <h2>Componentes de Hardware</h2>
+      <div class="grid-columns">
+        <article class="feature-card" role="button" data-filter="RAM">
+          <h3>RAM</h3>
+          <p>Memorias de alto rendimiento para gaming y edición.</p>
+        </article>
+        <article class="feature-card" role="button" data-filter="CPU">
+          <h3>CPU</h3>
+          <p>Procesadores para todas las necesidades, desde trabajo hasta streaming.</p>
+        </article>
+        <article class="feature-card" role="button" data-filter="GPU">
+          <h3>GPU</h3>
+          <p>Tarjetas gráficas potentes para gaming y diseño.</p>
+        </article>
+        <article class="feature-card" role="button" data-filter="Almacenamiento">
+          <h3>Almacenamiento</h3>
+          <p>SSD y HDD para máxima velocidad y capacidad.</p>
+        </article>
+        <article class="feature-card" role="button" data-filter="Placas Madre">
+          <h3>Placas Madre</h3>
+          <p>Compatibles con todos los sockets principales.</p>
+        </article>
+        <article class="feature-card" role="button" data-filter="Refrigeración">
+          <h3>Refrigeración</h3>
+          <p>Enfriamiento por aire y líquido para sistemas exigentes.</p>
+        </article>
+      </div>
+      <div class="catalog-grid">
+        <article class="catalog-item" data-cat="RAM">
+          <h4>RAM: Corsair Vengeance RGB 16GB</h4>
+          <p>Memoria DDR4 ideal para gaming con iluminación personalizable.</p>
+        </article>
+        <article class="catalog-item" data-cat="CPU">
+          <h4>CPU: Intel Core i7 13ª Gen</h4>
+          <p>Procesador de alto rendimiento para multitarea y juegos.</p>
+        </article>
+        <article class="catalog-item" data-cat="GPU">
+          <h4>GPU: NVIDIA RTX 4060</h4>
+          <p>Tarjeta gráfica para gaming fluido y edición en alta resolución.</p>
+        </article>
+        <article class="catalog-item" data-cat="Almacenamiento">
+          <h4>Almacenamiento: SSD NVMe 1TB</h4>
+          <p>Unidad rápida para arranque instantáneo y cargas ágiles.</p>
+        </article>
+        <article class="catalog-item" data-cat="Placas Madre">
+          <h4>Placa Madre: ASUS TUF Gaming</h4>
+          <p>Base confiable con soporte para los mejores componentes.</p>
+        </article>
+        <article class="catalog-item" data-cat="Refrigeración">
+          <h4>Refrigeración: AIO 240mm</h4>
+          <p>Enfriamiento líquido para mantener las temperaturas bajas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section accesorios" data-section="accesorios">
+      <h2>Accesorios</h2>
+      <div class="accessory-grid">
+        <article class="accessory-card" role="button" data-filter="Celulares">
+          <h3>Celulares</h3>
+          <p>Cargadores, fundas, cables y auriculares para tu móvil.</p>
+        </article>
+        <article class="accessory-card" role="button" data-filter="Computadoras">
+          <h3>Computadoras</h3>
+          <p>Teclados, mouse, monitores y periféricos gamer.</p>
+        </article>
+        <article class="accessory-card" role="button" data-filter="Otros">
+          <h3>Otros</h3>
+          <p>Accesorios variados: adaptadores, power banks y más.</p>
+        </article>
+      </div>
+      <div class="catalog-grid">
+        <article class="catalog-item" data-cat="Celulares">
+          <h4>Celulares: Cargador Rápido 65W</h4>
+          <p>Fuente de carga ideal para teléfonos modernos y tablets.</p>
+        </article>
+        <article class="catalog-item" data-cat="Celulares">
+          <h4>Celulares: Auriculares Bluetooth</h4>
+          <p>Sonido inalámbrico con autonomía extendida.</p>
+        </article>
+        <article class="catalog-item" data-cat="Computadoras">
+          <h4>Computadoras: Teclado Mecánico RGB</h4>
+          <p>Diseñado para gamers y creadores con iluminación personalizable.</p>
+        </article>
+        <article class="catalog-item" data-cat="Computadoras">
+          <h4>Computadoras: Mouse Gamer</h4>
+          <p>Sensor preciso y diseño ergonómico para largas sesiones.</p>
+        </article>
+        <article class="catalog-item" data-cat="Otros">
+          <h4>Otros: Power Bank 20,000 mAh</h4>
+          <p>Energía portátil para mantener tus dispositivos activos.</p>
+        </article>
+        <article class="catalog-item" data-cat="Otros">
+          <h4>Otros: Adaptador USB-C</h4>
+          <p>Conexión práctica para laptops, tablets y celulares.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="section contacto" data-section="contacto">
+      <h2>Contáctanos!!</h2>
+      <div class="cards-grid">
+        <article class="contact-card" role="button" data-filter="Instagram">
+          <h3>Instagram</h3>
+          <p>Promociones, lanzamientos y novedades en nuestro feed.</p>
+        </article>
+        <article class="contact-card" role="button" data-filter="Facebook">
+          <h3>Facebook</h3>
+          <p>Reseñas, noticias y comunidad PuntoTech.</p>
+        </article>
+        <article class="contact-card" role="button" data-filter="WhatsApp">
+          <h3>WhatsApp</h3>
+          <p>Chat en directo para consultas y pedidos rápidos.</p>
+        </article>
+      </div>
+      <div class="contact-links">
+        <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+        <a href="https://wa.me/" target="_blank" rel="noreferrer">WhatsApp</a>
+      </div>
+      <div class="catalog-grid">
+        <article class="catalog-item" data-cat="Instagram">
+          <h4>Instagram</h4>
+          <p>Síguenos para ver novedades y ofertas exclusivas.</p>
+        </article>
+        <article class="catalog-item" data-cat="Facebook">
+          <h4>Facebook</h4>
+          <p>Encuentra reseñas, noticias y promociones actualizadas.</p>
+        </article>
+        <article class="catalog-item" data-cat="WhatsApp">
+          <h4>WhatsApp</h4>
+          <p>Envía un mensaje directo para consultas y pedidos rápidos.</p>
+        </article>
+      </div>
+      <p class="footer-note">Encuentra tu componente ideal en PuntoTech.</p>
+    </footer>
+  </main>
+  <div class="cart-panel">
+    <button type="button" class="cart-toggle" aria-expanded="false">
+      Carrito 🛒 <span id="cart-count">0</span>
+    </button>
+    <div class="cart-content hidden" aria-label="Compras seleccionadas">
+      <h3>Tu carrito</h3>
+      <div class="cart-items" id="cart-items">
+        <p class="cart-empty">Aún no hay productos en el carrito.</p>
+      </div>
+      <div class="cart-summary">
+        <p>Total: <strong id="cart-total">$0.00</strong></p>
+        <button type="button" class="cart-clear">Vaciar carrito</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const products = [
+      { name: 'Corsair Vengeance RGB 16GB', section: 'RAM', category: 'Componentes', description: 'Memoria DDR4 ideal para gaming con iluminación personalizable.', price: 129.99, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=Corsair+16GB' },
+      { name: 'Kingston Fury 32GB', section: 'RAM', category: 'Componentes', description: 'Kit de alta velocidad para edición y multitarea.', price: 149.95, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=Kingston+32GB' },
+      { name: 'Intel Core i7 13ª Gen', section: 'CPU', category: 'Componentes', description: 'Procesador potente para trabajo y entretenimiento.', price: 349.00, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=Intel+i7' },
+      { name: 'AMD Ryzen 5 7600', section: 'CPU', category: 'Componentes', description: 'Equilibrio entre precio y rendimiento para gaming.', price: 269.00, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=Ryzen+5+7600' },
+      { name: 'NVIDIA RTX 4060', section: 'GPU', category: 'Componentes', description: 'Gráficos avanzados para gaming y creación de contenido.', price: 429.99, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=RTX+4060' },
+      { name: 'AMD Radeon RX 7600', section: 'GPU', category: 'Componentes', description: 'Excelente relación calidad/precio en desempeño gráfico.', price: 369.99, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=RX+7600' },
+      { name: 'SSD NVMe 1TB', section: 'Almacenamiento', category: 'Componentes', description: 'Velocidad superior para juegos y carga de aplicaciones.', price: 109.50, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=SSD+1TB' },
+      { name: 'HDD 2TB', section: 'Almacenamiento', category: 'Componentes', description: 'Gran capacidad para archivos y copias de seguridad.', price: 79.95, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=HDD+2TB' },
+      { name: 'ASUS TUF Gaming', section: 'Placas Madre', category: 'Componentes', description: 'Placa madre robusta y preparada para actualizaciones.', price: 219.90, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=ASUS+TUF' },
+      { name: 'MSI B660', section: 'Placas Madre', category: 'Componentes', description: 'Estabilidad y compatibilidad con procesadores modernos.', price: 189.95, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=MSI+B660' },
+      { name: 'AIO 240mm', section: 'Refrigeración', category: 'Componentes', description: 'Solución líquida para mantener temperaturas controladas.', price: 139.95, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=AIO+240mm' },
+      { name: 'Ventilador RGB', section: 'Refrigeración', category: 'Componentes', description: 'Iluminación y flujo de aire para tu caja.', price: 29.90, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=Ventilador+RGB' },
+      { name: 'Cargador Rápido 65W', section: 'Celulares', category: 'Accesorios', description: 'Carga rápida para smartphones y tablets.', price: 24.90, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=Cargador+65W' },
+      { name: 'Auriculares Bluetooth', section: 'Celulares', category: 'Accesorios', description: 'Audio sin cables con buena autonomía.', price: 59.90, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=Auriculares+BT' },
+      { name: 'Teclado Mecánico RGB', section: 'Computadoras', category: 'Accesorios', description: 'Switches táctiles para una experiencia premium.', price: 89.99, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=Teclado+RGB' },
+      { name: 'Mouse Gamer', section: 'Computadoras', category: 'Accesorios', description: 'Sensor preciso y diseño ergonómico.', price: 39.99, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=Mouse+Gamer' },
+      { name: 'Power Bank 20,000 mAh', section: 'Otros', category: 'Accesorios', description: 'Energía portátil para mantener tus dispositivos activos.', price: 44.90, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=Power+Bank' },
+      { name: 'Adaptador USB-C', section: 'Otros', category: 'Accesorios', description: 'Conector versátil para data y energía.', price: 19.95, image: 'https://via.placeholder.com/320x200/1f2937/ffffff?text=USB-C+Adaptador' }
+    ];
+
+    const searchInput = document.getElementById('search');
+    const resultsContainer = document.getElementById('search-results');
+    const searchButton = document.querySelector('.search-field button');
+    const catalogGrid = document.getElementById('catalog-grid');
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const prevCarousel = document.querySelector('.carousel-arrow.prev');
+    const nextCarousel = document.querySelector('.carousel-arrow.next');
+    const cartCount = document.getElementById('cart-count');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const cartContent = document.querySelector('.cart-content');
+    const cartToggle = document.querySelector('.cart-toggle');
+    const cartClear = document.querySelector('.cart-clear');
+
+    const cart = [];
+
+    function formatPrice(value) {
+      return `$${value.toFixed(2)}`;
+    }
+
+    function renderCatalog(items) {
+      if (!catalogGrid) return;
+      catalogGrid.innerHTML = items.map(item => `
+        <article class="product-card">
+          <img src="${item.image}" alt="${item.name}" class="catalog-image" />
+          <div class="product-card-content">
+            <h3>${item.name}</h3>
+            <p>${item.description}</p>
+            <p class="price">${formatPrice(item.price)}</p>
+            <button type="button" class="add-to-cart" data-name="${item.name}" data-price="${item.price}">Agregar al carrito</button>
+          </div>
+        </article>
+      `).join('');
+
+      catalogGrid.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => addToCart(button.dataset.name, Number(button.dataset.price)));
+      });
+    }
+
+    function filterCatalog(filter) {
+      filterButtons.forEach(button => {
+        button.classList.toggle('active', button.dataset.filter === filter);
+      });
+      const filtered = filter === 'Todos'
+        ? products
+        : products.filter(item => item.category === filter);
+      renderCatalog(filtered);
+    }
+
+    function updateCartCount() {
+      cartCount.textContent = cart.reduce((total, item) => total + item.qty, 0);
+    }
+
+    function renderCart() {
+      if (!cartItemsContainer) return;
+      if (!cart.length) {
+        cartItemsContainer.innerHTML = '<p class="cart-empty">Aún no hay productos en el carrito.</p>';
+        cartTotal.textContent = '$0.00';
+        updateCartCount();
+        return;
+      }
+
+      cartItemsContainer.innerHTML = cart.map(item => `
+        <article class="cart-item">
+          <div>
+            <h4>${item.name}</h4>
+            <p>Cantidad: ${item.qty}</p>
+          </div>
+          <div class="cart-item-actions">
+            <p>${formatPrice(item.price * item.qty)}</p>
+            <button type="button" class="cart-remove" data-name="${item.name}">Eliminar</button>
+          </div>
+        </article>
+      `).join('');
+
+      cartTotal.textContent = formatPrice(cart.reduce((total, item) => total + item.price * item.qty, 0));
+      updateCartCount();
+      cartItemsContainer.querySelectorAll('.cart-remove').forEach(button => {
+        button.addEventListener('click', () => removeFromCart(button.dataset.name));
+      });
+    }
+
+    function addToCart(name, price) {
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ name, price, qty: 1 });
+      }
+      renderCart();
+      cartContent.classList.remove('hidden');
+      cartToggle.setAttribute('aria-expanded', 'true');
+    }
+
+    function removeFromCart(name) {
+      const index = cart.findIndex(item => item.name === name);
+      if (index !== -1) {
+        cart.splice(index, 1);
+      }
+      renderCart();
+    }
+
+    cartToggle.addEventListener('click', () => {
+      const visible = !cartContent.classList.toggle('hidden');
+      cartToggle.setAttribute('aria-expanded', String(visible));
+    });
+
+    cartClear.addEventListener('click', () => {
+      cart.length = 0;
+      renderCart();
+    });
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => filterCatalog(button.dataset.filter));
+    });
+
+    if (prevCarousel && nextCarousel && catalogGrid) {
+      prevCarousel.addEventListener('click', () => {
+        catalogGrid.scrollBy({ left: -340, behavior: 'smooth' });
+      });
+      nextCarousel.addEventListener('click', () => {
+        catalogGrid.scrollBy({ left: 340, behavior: 'smooth' });
+      });
+    }
+
+    function renderResults(items, query) {
+      if (!items.length) {
+        resultsContainer.innerHTML = `<p class="search-message">No se encontraron resultados para "${query}". Intenta con otro término.</p>`;
+        return;
+      }
+
+      resultsContainer.innerHTML = `
+        <div class="search-result-grid">
+          ${items.map(item => `
+            <article class="search-card">
+              <h3>${item.name}</h3>
+              <p><strong>Sección:</strong> ${item.section}</p>
+              <p><strong>Categoría:</strong> ${item.category}</p>
+              <p>${item.description}</p>
+            </article>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function searchProducts(query) {
+      const term = query.trim().toLowerCase();
+      if (!term) {
+        resultsContainer.innerHTML = '<p class="search-message">Escribe algo para buscar en nuestro catálogo.</p>';
+        return;
+      }
+
+      const filtered = products.filter(item => {
+        return [item.name, item.section, item.category, item.description]
+          .some(field => field.toLowerCase().includes(term));
+      });
+
+      renderResults(filtered, query);
+    }
+
+    function performSearch() {
+      searchProducts(searchInput.value);
+    }
+
+    const sectionTabs = document.querySelectorAll('.section-tab');
+    const sections = document.querySelectorAll('[data-section]');
+    const filterCards = document.querySelectorAll('[data-filter]');
+
+    function setActiveSection(sectionId) {
+      sectionTabs.forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.target === sectionId);
+      });
+      sections.forEach(section => {
+        const isActive = section.dataset.section === sectionId;
+        section.classList.toggle('active', isActive);
+        if (isActive) {
+          const cards = section.querySelectorAll('[data-filter]');
+          cards.forEach(card => card.classList.remove('active'));
+          const catalogItems = section.querySelectorAll('.catalog-item');
+          catalogItems.forEach(item => item.hidden = false);
+        }
+      });
+    }
+
+    function setActiveFilter(section, filter) {
+      const cards = section.querySelectorAll('[data-filter]');
+      const catalogItems = section.querySelectorAll('.catalog-item');
+
+      cards.forEach(card => {
+        card.classList.toggle('active', card.dataset.filter === filter);
+      });
+
+      catalogItems.forEach(item => {
+        item.hidden = item.dataset.cat !== filter;
+      });
+    }
+
+    filterCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const section = card.closest('[data-section]');
+        if (!section) return;
+        setActiveSection(section.dataset.section);
+        setActiveFilter(section, card.dataset.filter);
+        card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+    });
+
+    sectionTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        setActiveSection(tab.dataset.target);
+        document.querySelector(`[data-section="${tab.dataset.target}"]`).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    setActiveSection('catalogo');
+    filterCatalog('Todos');
+
+    searchButton.addEventListener('click', performSearch);
+    searchInput.addEventListener('keyup', event => {
+      if (event.key === 'Enter') {
+        performSearch();
+      } else if (!searchInput.value.trim()) {
+        resultsContainer.innerHTML = '<p class="search-message">Escribe algo para buscar en nuestro catálogo.</p>';
+      }
+    });
+  </script>
+</body>
+</html>
